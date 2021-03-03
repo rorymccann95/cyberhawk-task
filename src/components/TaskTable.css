@@ -1,0 +1,26 @@
+.majorDamage {
+    color: black;
+    background-color: rgb(168, 4, 4);
+    border: 3px solid rgb(168, 4, 4);
+}
+
+.minorDamage {
+    color: black;
+    background-color: rgb(155, 155, 6);
+    border: 3px solid rgb(155, 155, 6);
+}
+
+li {
+    color: black;
+    background-color: rgb(0, 131, 0);
+    margin: 3%;
+    padding: 2%;
+    border: 3px solid rgb(0, 131, 0);
+    border-radius: 50%;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}

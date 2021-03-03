@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import TaskTable from './components/TaskTable'
+import { useState, useEffect } from 'react';
+import { getIncidents } from './api/TaskAPI'
+import './App.css'
+
 
 function App() {
+
+  const [ajaxData, setAjaxData] = useState([])
+  useEffect(() => {
+    getIncidents().then(result => setAjaxData(result))
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Incidents</h1>
+      <TaskTable tableData={ajaxData} />
     </div>
   );
 }
